@@ -1,17 +1,18 @@
 Rails.application.routes.draw do
-  get 'articles/index'
 
-  get 'articles/create'
+  get 'comments/index'
 
-  get 'articles/edit'
+  get 'comments/create'
 
-  get 'articles/show'
+  get 'comments/new'
 
-  get 'articles/update'
+  get 'comments/edit'
 
-  get 'articles/destroy'
+  get 'comments/show'
 
-  get 'articles/new'
+  get 'comments/update'
+
+  get 'comments/destroy'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -28,7 +29,9 @@ Rails.application.routes.draw do
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
-  resources :articles
+  resources :articles do
+    resources :comments
+  end
 
   # Example resource route with options:
   #   resources :products do
